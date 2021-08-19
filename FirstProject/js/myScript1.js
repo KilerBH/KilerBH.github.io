@@ -31,19 +31,19 @@ $(document).ready(function(){
     
  let options5 = {threshold: [0.5]};
     let observer5 = new IntersectionObserver(onEntry5, options5);
-    let elements5 = $('.SN img');
+    let elements5 = $('.SN a');
     elements5.each((i, el) =>{
         observer5.observe(el);
     }); 
     
- let options6 = {threshold: [0.5]};
+ let options6 = {threshold: [0.4]};
     let observer6 = new IntersectionObserver(onEntry6, options6);
     let elements6 = $('.contacts');
     elements6.each((i, el) =>{
         observer6.observe(el);
     }); 
     
- let options7 = {threshold: [0.7]};
+ let options7 = {threshold: [0.6]};
     let observer7 = new IntersectionObserver(onEntry7, options7);
     let elements7 = $('.reviews');
     elements7.each((i, el) =>{
@@ -57,12 +57,38 @@ $(document).ready(function(){
         observer8.observe(el);
     }); 
     
- let options9 = {threshold: [0.7]};
+ let options9 = {threshold: [0.3]};
     let observer9 = new IntersectionObserver(onEntry9, options9);
     let elements9 = $('.cases');
     elements9.each((i, el) =>{
         observer9.observe(el);
     }); 
+    
+    $("#inputTel").mask("+7(999) 999-9999");
+    
+    $('form').submit(function(event){
+        if ($('#inputTel').val() == "" || $('#inputEmail3').val() == ""){
+            event.preventDefault
+            alert('Введите телефон')
+        }
+    })
+    
+    new WOW().init();
+    
+    $('form').submit(function(event1){
+        event1.preventDefault();
+        
+        $.ajax({
+            type: "POST",
+            url: "php/mail.php",
+            data: $(this).serialize()
+        }).done(function(){
+            $(this).find("input").val("");
+            alert("Успешно отправлено!");
+            $("form").trigger("reset");
+        });
+        return false;
+    })
     
 });
 

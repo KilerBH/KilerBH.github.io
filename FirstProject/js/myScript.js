@@ -69,7 +69,7 @@ $(document).ready(function () {
 
 
 
-/*Popup */
+/*Popup 
 
 $(".clear-cookie").on("click", function() {
   Cookies.remove('colorboxShown');
@@ -110,7 +110,7 @@ function displayPopup() {
   setTimeout(function() {
     lastFocus = document.activeElement;
     displayPopup();
-  }, 5000);
+  }, 30000);*/
 
 
 
