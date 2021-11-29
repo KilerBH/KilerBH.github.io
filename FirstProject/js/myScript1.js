@@ -164,6 +164,33 @@ function onEntry9(entry9){
     });
 }
 
+//недокод на собеседование
+function options() {
+    var option = {threshold: [0.5]};
+    var observer = new IntersectionObserver(onEntry1, options1);
+    var element = $('.cont li');
+    element.each((i, el) =>{
+        observer.observe(el);
+    }); 
+}
+
+let options1 = {threshold: [0.5]};
+    let observer1 = new IntersectionObserver(onEntry1, options1);
+    let elements1 = $('.cont li');
+    elements1.each((i, el) =>{
+        observer1.observe(el);
+    }); 
+    
+ let options2 = {threshold: [0.2]};
+    let observer2 = new IntersectionObserver(onEntry2, options2);
+    let elements2 = $('.stat li');
+    elements2.each((i, el) =>{
+        observer2.observe(el);
+    });
+
+option().observer.foreach();{
+
+}
 
 
 
