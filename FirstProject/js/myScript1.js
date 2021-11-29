@@ -164,7 +164,8 @@ function onEntry9(entry9){
     });
 }
 
-//недокод на собеседование
+//недокод на собеседование: идея в том, что мы создаём функцию с переменными и ТД в них, 
+//затем цикл чтобы эти самые даные передавать в функцию столько раз сколько надо, основы ООП)) 
 function options() {
     var option = {threshold: [0.5]};
     var observer = new IntersectionObserver(onEntry1, options1);
