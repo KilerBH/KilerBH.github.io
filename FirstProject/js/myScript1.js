@@ -192,8 +192,15 @@ let options1 = {threshold: [0.5]};
 option().observer.foreach();{
 
 }
-
-
+//переделка
+const arr = [
+    ob1 ={threshold: [0.5]},$('.cont li'),
+    ob2 ={threshold: [0.2]},$('.stat li'),]
+    
+arr.foreach((i, el) =>{ 
+    observer = new IntersectionObserver();
+    observer.observe(el);
+})
 
 
 
